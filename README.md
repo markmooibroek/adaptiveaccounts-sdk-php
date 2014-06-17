@@ -2,25 +2,16 @@
 
 ## Prerequisites
 
-
 PayPal's PHP Adaptive Accounts SDK requires 
 
-   * PHP 5.2 and above 
+   * PHP 5.3 and above 
    * curl/openssl PHP extensions
 
 ## Running the sample
 
-To run the bundled sample, first copy the samples folder to your web server root. You will then need to install the SDK as a dependency using either composer (PHP V5.3+ only) or by running a custom installation script provided with the SDK.
+To run the bundled sample, first copy the samples folder to your web server root. You will then need to install the SDK as a dependency using composer (PHP V5.3+ only)
 
-If using composer, run `composer update` from the samples folder. Otherwise, run install.php from adaptiveaccounts-sdk-php/samples directory
-
-```bash
-   
-    cd samples   
-    curl  https://raw.github.com/paypal/adaptiveaccounts-sdk-php/stable/samples/install.php | php    
-        OR        
-    php install.php
-```
+run `composer update` from the samples folder.
 
 ## Using the SDK
 
@@ -33,13 +24,13 @@ To use the SDK,
 {
     "name": "me/shopping-cart-app",
     "require": {
-        "paypal/adaptiveaccounts-sdk-php":"v2.6.106"
+        "paypal/adaptiveaccounts-sdk-php":"v3.6.106"
     }
 }
 ```
 
-   * Install the SDK as a dependency using composer or the install.php script.
-   * Require `vendor/autoload.php` OR `PPBootStrap.php` in your application depending on whether you used composer or the custom installer.
+   * Install the SDK as a dependency using composer.
+   * Require `vendor/autoload.php` in your application.
    * Choose how you would like to configure the SDK - You can either
 	  * Create a hashmap containing configuration parameters and pass it to the service object OR
       * Create a `sdk_config.ini` file and set the PP_CONFIG_PATH constant to point to the directory where this file exists.
@@ -99,8 +90,6 @@ The SDK allows you to configure the following parameters
    * HTTP connection parameters
    * Logging 
 
-You can configure the SDK via the sdk_config.ini file.
-  
 Dynamic configuration values can be set by passing a map of credential and config values (if config map is passed the config file is ignored)
 ```php
     $config = array(
@@ -111,7 +100,8 @@ Dynamic configuration values can be set by passing a map of credential and confi
     );
 	$service  = new AdaptiveAccountsService($config);
 ```
-Alternatively, credential and configuration can be loaded from a file. 
+Alternatively, you can configure the SDK via the sdk_config.ini file. 
+  
 ```php
     define('PP_CONFIG_PATH', '/directory/that/contains/sdk_config.ini');
     $service  = new AdaptiveAccountsService();
