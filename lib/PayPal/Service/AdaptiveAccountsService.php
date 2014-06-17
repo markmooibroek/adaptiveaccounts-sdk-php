@@ -37,7 +37,7 @@ class AdaptiveAccountsService extends PPBaseService {
     *
     */
 	public function __construct($config = null) {
-		parent::__construct(self::$SERVICE_NAME, 'NV', array('PayPal\Handler\PPPlatformServiceHandler'), $config);
+	    parent::__construct(self::$SERVICE_NAME, 'NV', array(new PPPlatformServiceHandler(null, self::$SDK_NAME, self::$SDK_VERSION)), $config);
       //  parent::$SDK_NAME    = self::$SDK_NAME ;
       //  parent::$SDK_VERSION = self::$SDK_VERSION;
 	}
