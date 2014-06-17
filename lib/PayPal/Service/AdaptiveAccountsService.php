@@ -3,6 +3,7 @@ namespace PayPal\Service;
 use PayPal\Core\PPMessage;
 use PayPal\Core\PPBaseService;
 use PayPal\Core\PPUtils;
+use PayPal\Handler\PPPlatformServiceHandler;
 use PayPal\Types\AA\CreateAccountResponse;
 use PayPal\Types\AA\GetUserAgreementResponse;
 use PayPal\Types\AA\GetVerifiedStatusResponse;
